@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id "io.qameta.allure" version "2.11.0"
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    testImplementation 'io.qameta.allure:allure-junit5:2.22.2'
+    implementation 'org.seleniumhq.selenium:selenium-java:4.10.0'
+    implementation 'org.seleniumhq.selenium:selenium-http-jdk-client:4.10.0'
+    implementation 'com.codeborne:selenide:6.15.0'
+    implementation 'org.assertj:assertj-core:3.24.2'
+}
+
+test {
+    useJUnitPlatform()
+}
